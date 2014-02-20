@@ -1,0 +1,109 @@
+doctype html
+| <!--[if IE 8]>
+| <html class="no-js lt-ie9" lang="en" >
+| <![endif]-->
+| <!--[if gt IE 8]><!-->
+| <html class="no-js" lang="en" >
+| <!--<![endif]-->
+
+head
+  title
+    | {% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}
+
+  | {% if page.index %}
+  | {% capture description %}{{ site.description }}{% endcapture %}
+  | {% else %}
+  | {% capture description %}
+  | {% if page.description %}{{ page.description | strip_breaks | condense_spaces | quote_transform |truncate:150 }}
+  | {% else %}{{ page.content | markdownify | strip_html | strip_breaks | decode | condense_spaces | quote_transform | truncate:150 }}
+  | {% endif %}
+  | {% endcapture %}
+  | {% endif %}
+
+  | {% capture keywords %}{{page.categories | join: ', '}}, {{page.tags | join: ', '}}{% endcapture %}
+
+  | {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'/index.html' }}{% endif %}{% endcapture %}
+
+  | {% capture og_image %}
+  | {% if page.image %}{{ page.image }}{% else %}{{ site.default_page_image }}{% endif %}
+  | {% endcapture %}
+
+  | {% capture author %}
+  | {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}
+  | {% endcapture %}
+
+  meta charset="utf-8"
+  | {% if page.og_type == "article" %}
+  meta property="article:author" content="{% if page.author_facebook %}{{ page.author_facebook }}{% else %}{{ site.author_facebook }}{% endif %}"
+  | {% if page.category %}
+  meta property="article:section" content="{{page.category}}"
+  | {% endif %}
+  | {% if keywords %}
+  meta property="article:tag" content="{{ keywords | clean_keywords }}"
+  | {% endif %}
+  | {% endif %}
+  meta name="author" content="{{ author }}"
+  meta name="viewport" content="width=device-width, initial-scale=1"
+  meta name="HandheldFriendly" content="True"
+  meta name="MobileOptimized" content="320"
+  meta name="google-site-verification" content="pbSGBfIzQE8RHV7p-VLLoate8pJ1P26EiUbSy_B1Os4"
+  meta name="alexaVerifyID" content="XfmiNGbk4cll3f_rgofOLGtW9Vc"
+  meta name="description" content="{{ description }}" property="og:description"
+  | {% if keywords %}
+  meta name="keywords" content="{{ keywords | clean_keywords }}"
+  | {% endif %}
+  meta property="og:image" content="{{og_image}}"
+  meta property="og:url" content="{{canonical}}"
+  meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"
+  meta property="og:site_name" content="{{site.title}}"
+  meta property="og:type" content="{% if page.og_type %}{{page.og_type}}{% else %}blog{% endif %}"
+  link rel="author" href="{{ site.url}}/humans.txt"
+  link rel="icon" href="{{ site.url }}/favicon.ico"
+  | {% if page.index == true %}
+  link rel="alternate" href="{{ site.feed }}" title="{{site.title}}" type="application/atom+xml"
+  | {% endif %}
+  | {% if page.has_feed == true %}
+  link rel="alternate" href="{{ canonical }}/atom.xml" title="{{page.title}}" type="application/atom+xml"
+  | {% endif %}
+  link rel="canonical" href="{{ canonical }}"
+
+  | {% css_asset_tag global_css %}
+    - /_assets/css/app.scss
+    - /_assets/css/code.scss
+    - /_assets/css/font-awesome/font-awesome.scss
+  | {% endcss_asset_tag %}
+
+  link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,700' rel='stylesheet' type='text/css'
+
+  | {% javascript_asset_tag head_js %}
+    - /_assets/js/vendor/custom.modernizr.js
+    - /_assets/js/head.js
+  | {% endjavascript_asset_tag %}
+
+  | <script>
+  | var _gaq = _gaq || [];
+  | var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  | _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  | _gaq.push(['_setAccount', 'UA-37389931-4']);
+  | _gaq.push(['_trackPageview']);
+  | (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  | ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+  | var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  | })();
+  | </script>
+
+body
+  .content-wrapper(itemscope itemtype="http://schema.org/Article")
+    | {{ content }}
+
+  script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+
+  | {% javascript_asset_tag tail_js %}
+    - /_assets/js/foundation/foundation.js
+    - /_assets/js/foundation/foundation.orbit.js
+    - /_assets/js/foundation/foundation.dropdown.js
+    - /_assets/js/foundation/foundation.topbar.js
+    - /_assets/js/vendor/waypoints.js
+    - /_assets/js/tail.js
+  | {% endjavascript_asset_tag %}
+| </html>

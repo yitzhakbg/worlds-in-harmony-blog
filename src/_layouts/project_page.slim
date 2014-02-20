@@ -1,0 +1,25 @@
+---
+layout: page
+---
+.row
+  .large-12.columns.article-content
+    | {{ content }}
+| {% assign project_posts = site.posts | project_articles:page.project %}
+| {% if project_posts %}
+.row.bottom-spaced
+  .large-12.columns.text-center
+    hr
+    h2 All Articles Related to this Project
+.row
+  .large-12.columns
+    | {% for post in project_posts %}
+    | {% slim large_post_preview.slim %}
+    | {% endfor %}
+| {% endif %}
+| {% slim footer/page_footer.slim %}
+.row.bottom-spaced
+  .large-12.columns
+    div id="disqus_thread"
+    script
+      | var disqus_title = '{{ page.project | titlecase }} Project';
+      | var disqus_url = 'http://www.enigmatic-dusk-5034.herokuapp.com/project/{{page.project | slugify}}';

@@ -1,0 +1,45 @@
+# Directory Settings
+source: ./src
+destination: ./build/deploy
+plugins: ./src/_plugins
+
+# Site Specific Settings
+timezone: Asia/Jerusalem
+permalink: /:title
+url: http://sleepy-garden-8745.herokuapp.com
+default_page_image: https://lh4.googleusercontent.com/-jW70ksSlZGQ/UwTzZbEk6SI/AAAAAAAAAW0/AJ-qvpQwtn4/w1118-h316-no/Default.png
+default_home_image: https://lh6.googleusercontent.com/-2C2t8RGYyww/UwT0JoVTPsI/AAAAAAAAAXw/ajvb39KEb3U/w1118-h750-no/Jladder.png
+
+title: Foot of the Ladder
+description: "Material and Abstract Worlds in Harmony\nYitzhak Bar Geva, Software Network Communications Philosopher\nawash in Judea\'s turbulent revival\n"
+
+# Syndication Settings
+# feed: http://feeds.feedburner.com/neverstopbuilding/TGMp
+
+#Builder Information
+author: Yitzhak Bar Geva
+email: yitzhakbargeva@gmail.com
+twitter: //twitter.com/yitzhakbg
+twitter_username: yitzhakbg
+# youtube: //www.youtube.com/channel/UCh_nK5VCWskMmb4utiWaidw
+github: //github.com/yitzhakbg
+google_plus: //google.com/+YitzhakBarGeva1
+from: "Beit El, Israel"
+author_facebook: https://www.facebook.com/yitzhakbg
+
+# Plugin Settings
+markdown: redcarpet
+pygments: true
+
+asset_pipeline:
+  bundle: true
+  compress: true
+  output_path: assets
+  display_path: nil
+  gzip: true
+
+sitemap:
+  local: false
+  repo: https://github.com/yitzhakbg/NeverStopBuildingBlog.git
+
+category_dir: category

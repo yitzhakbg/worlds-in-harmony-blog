@@ -1,0 +1,40 @@
+---
+layout: default
+index: true
+has_feed: true
+change_frequency: weekly
+tags:
+  - academia
+  - code craftsmanship
+  - Cacophony
+  - Distributed Systems
+  - Network
+  - Revival Crescendo
+  - sync
+  - multicore
+  - DSL
+  - Parallel Concurrent
+  - Programming
+  - RoadMap
+  - Protocols
+  - Aliyah
+  - Material Spiritual
+  - Communications
+---
+header.home-image style="background-image: url({{ site.default_home_image }});"
+  | {% slim nav.slim %}
+  .row.title-container
+    .large-12.columns.text-center.title-text id="site-title"
+      h1
+        span Worlds in Harmony.
+section.intro
+  .row
+    .large-12.columns.text-center.dark.epic
+      h2 Yitzhak Bar Geva - Distributed Systems Software and Network Communications Engineer.
+section.row.top-spaced
+  .large-12.columns
+    | {% for post in site.posts limit:4 %}
+    | {% slim large_post_preview.slim %}
+    | {% endfor %}
+| {% slim footer/page_footer.slim %}
+| {% slim footer.slim %}

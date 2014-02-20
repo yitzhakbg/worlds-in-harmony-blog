@@ -1,0 +1,18 @@
+nav.top-bar data-topbar=""
+  ul.title-area
+    li.name
+      | {% unless page.url == '/index.html' %}
+      h1
+        a.mp-nav-link title="home" href="{{ site.url }}"
+          i.fa.fa-square
+          |&nbsp;Worlds in Harmony
+      | {% endunless %}
+    li.toggle-topbar.menu-icon
+      a href=""
+  section.top-bar-section
+    ul.right
+      li
+        a.mp-nav-link href="{{ site.url }}/archive" title="archive" ARCHIVE
+      li
+        a.mp-nav-link href="{{ site.feed }}" title="subscribe" SUBSCRIBE
+

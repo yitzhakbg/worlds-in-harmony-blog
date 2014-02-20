@@ -1,0 +1,21 @@
+---
+layout: page
+og_type: article
+---
+| {% capture description %}
+| {% if page.description %}{{ page.description | strip_breaks | condense_spaces | truncate:150 }}
+| {% else %}{{ page.content | markdownify | strip_html | strip_breaks | decode | condense_spaces | truncate:150 }}
+| {% endif %}
+| {% endcapture %}
+| {% capture keywords %}{{page.categories | join: ', '}}, {{page.tags | join: ', '}}{% endcapture %}
+.row.post
+  article.large-12.columns
+    header.row.top-spaced.bottom-spaced.text-center
+      .large-12.columns
+        meta itemprop="description" content="{{description}}"
+        meta itemprop="keywords" content="{{keywords | clean_keywords}}"
+        | {% slim meta.slim %}
+    .row
+      .large-12.columns.article-content.mp-article itemprop="articleBody"
+        | {{ content }}
+    | {% slim footer/post_footer.slim %}

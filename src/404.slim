@@ -1,0 +1,17 @@
+---
+layout: page
+title: 404
+image: https://lh4.googleusercontent.com/2Yc2ZKPyIBQurZ-nsKclKzSFu70by7YqfR5h20j_p9A=w270-h217-p-no
+---
+.row.top-spaced
+    .large-12.columns
+      header.row
+        .large-12.columns.text-center
+          h2 Darn. Something ain't right.
+          h4 The page you were looking for can't be found.
+          p
+            em Perhaps you would like one of the recent articles below:
+      | {% for post in site.posts limit:4 %}
+      | {% slim large_post_preview.slim %}
+      | {% endfor %}
+      | {% slim footer/page_footer.slim %}

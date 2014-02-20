@@ -1,0 +1,17 @@
+---
+layout: page
+---
+.row.page
+  .large-12.columns
+    header.row.top-spaced.bottom-spaced.text-center
+      .large-12.columns
+        .by-line
+          p
+            em
+              a<href="{% category_url page.category %}/atom.xml" Subscribe to articles from just this category.
+    .row.page.top-spaced
+      .large-12.colums
+        | {% for post in site.categories[page.category] %}
+        | {% slim large_post_preview.slim %}
+        | {% endfor %}
+        | {% slim footer/page_footer.slim %}

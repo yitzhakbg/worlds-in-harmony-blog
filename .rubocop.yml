@@ -1,0 +1,20 @@
+LineLength:
+  Enabled: false
+
+MethodLength:
+  Max: 30
+
+ClassLength:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+PerlBackrefs:
+  Enabled: false
+
+AllCops:
+  Includes:
+    - Rakefile
+    - Gemfile
+    - Guardfile
