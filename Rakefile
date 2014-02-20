@@ -47,7 +47,7 @@ task :social do
   posts = Dir.glob(File.join('src', '_posts', '*.md')).sort.reverse
   if posts[0] =~ /\d{4}-\d{2}-\d{2}-(.*)\.md/i
     slug = $1
-    path = 'http://www.powerful-shelf-6802.herokuapp.com/' + slug
+    path = 'http://powerful-shelf-6802.herokuapp.com/' + slug
   end
   content = File.read(posts[0])
   data = YAML.load($1) if content =~ /\A(---\s*\n.*?\n?)^(---\s*$\n?)/m
