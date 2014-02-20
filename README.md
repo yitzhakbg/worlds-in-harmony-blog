@@ -1,4 +1,6 @@
-#Never Stop Building: The Blog
+#Worlds in Harmony: The Blog.
+
+Cloned from Jason Robert Fox's blog, Never Stop Building. Kudos and a big thanks to Jason on the fine job and clear documentation
 
 ##Installation
 
