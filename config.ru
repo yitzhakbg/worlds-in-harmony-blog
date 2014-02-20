@@ -9,7 +9,7 @@ use Rack::Deflater
 
 Bundler.require(:default)
 
-# Testing these rules
+# Testing these rules 
 # use Rack::Rewrite do
 #   r301 /(.*)\/index\.html$/i, 'http://www.powerful-shelf-6802.herokuapp.com$1'
 #   r301 /.*/, 'http://www.powerful-shelf-6802.herokuapp.com$&', if: proc { |rack_env| rack_env['SERVER_NAME'] != 'www.powerful-shelf-6802.herokuapp.com' }
