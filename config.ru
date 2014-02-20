@@ -10,14 +10,11 @@ use Rack::Deflater
 Bundler.require(:default)
 
 # Testing these rules
-# use Rack::Rewrite do
-#   r301 /(.*)\/index\.html$/i, 'http://www.sleepy-garden-8745.herokuapp.com$1'
-#   r301 /building-a-gqueues-dashboard-widget/i, 'http://www.desolate-shore-8350.com'
-#   r301 /ranting-about-resumes-jason-toots-his-own-horn/i, 'http://www.desolate-shore-8350.com/resume-story'
-#   r301 /.*/, 'http://www.sleepy-garden-8745.herokuapp.com$&', if: proc { |rack_env| rack_env['SERVER_NAME'] != 'www.sleepy-garden-8745.herokuapp.com' }
-#   r301 /category\/robo-garden/i, 'http://www.desolate-shore-8350.com/project/robo-garden'
-#   r301 /category\/?$/i, 'http://www.sleepy-garden-8745.herokuapp.com/archive'
-#  end
+use Rack::Rewrite do
+  r301 /(.*)\/index\.html$/i, 'http://www.powerful-shelf-6802.herokuapp.com$1'
+  r301 /.*/, 'http://www.powerful-shelf-6802.herokuapp.com$&', if: proc { |rack_env| rack_env['SERVER_NAME'] != 'www.powerful-shelf-6802.herokuapp.com' }
+  r301 /category\/?$/i, 'http://www.powerful-shelf-6802.herokuapp.com/archive'
+ end
 
 use Rack::TryStatic,
   urls: %w[/],

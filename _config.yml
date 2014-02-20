@@ -6,7 +6,7 @@ plugins: ./src/_plugins
 # Site Specific Settings
 timezone: Asia/Jerusalem
 permalink: /:title
-url: http://sleepy-garden-8745.herokuapp.com
+url: http://www.powerful-shelf-6802.herokuapp.com
 default_page_image: https://lh4.googleusercontent.com/-jW70ksSlZGQ/UwTzZbEk6SI/AAAAAAAAAW0/AJ-qvpQwtn4/w1118-h316-no/Default.png
 default_home_image: https://lh6.googleusercontent.com/-2C2t8RGYyww/UwT0JoVTPsI/AAAAAAAAAXw/ajvb39KEb3U/w1118-h750-no/Jladder.png
 
