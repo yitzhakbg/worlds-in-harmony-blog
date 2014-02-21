@@ -29,7 +29,7 @@ module Jekyll
         process(@name)
         read_yaml(File.join(base, '_layouts'), 'category_feed.xml')
         data['category'] = category
-        data['description'] = "A Feed of articles related to #{category.titlecase}, from Wprlds in Harmony."
+        data['description'] = "A Feed of articles related to #{category.titlecase}, from Worlds in Harmony."
         data['title'] = category.titlecase
       end
     end

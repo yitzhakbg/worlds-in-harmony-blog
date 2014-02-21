@@ -19,10 +19,13 @@ gem 'git', '~> 1.2.6'
 
 gem 'levenshtein'
 gem 'rubocop'
+gem 'kramdown'
 
 group :development do
   gem 'guard-jekyll-plus', git: 'https://github.com/imathis/guard-jekyll-plus', branch: 'master'
   gem 'guard-rubocop'
   gem 'rb-fsevent'
+  gem 'pry'
+  gem 'pry-doc'
   gem 'guard-livereload'
 end

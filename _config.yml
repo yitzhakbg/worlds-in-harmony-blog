@@ -10,6 +10,8 @@ url: http://powerful-shelf-6802.herokuapp.com
 default_page_image: https://lh4.googleusercontent.com/-jW70ksSlZGQ/UwTzZbEk6SI/AAAAAAAAAW0/AJ-qvpQwtn4/w1118-h316-no/Default.png
 default_home_image: https://lh6.googleusercontent.com/-2C2t8RGYyww/UwT0JoVTPsI/AAAAAAAAAXw/ajvb39KEb3U/w1118-h750-no/Jladder.png
 
+exclude:  [ Gemfile, Gemfile.lock, Procfile, vendor]
+
 title: Foot of the Ladder
 description: "Material and Abstract Worlds in Harmony\nYitzhak Bar Geva, Software Network Communications Philosopher\nawash in Judea\'s turbulent revival\n"
 
@@ -28,7 +30,8 @@ from: "Beit El, Israel"
 author_facebook: https://www.facebook.com/yitzhakbg
 
 # Plugin Settings
-markdown: redcarpet
+# markdown: redcarpet
+markdown: kramdown
 pygments: true
 
 asset_pipeline:
